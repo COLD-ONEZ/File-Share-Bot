@@ -84,7 +84,7 @@ async def ForceSub(bot: Client, update: Message):
 
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        fix_d await ForceSub(bot, update, file_id)
+        fix_d = await ForceSub(bot, update)
         return fix_d
 
     except Exception as err:
