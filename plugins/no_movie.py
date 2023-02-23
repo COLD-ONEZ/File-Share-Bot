@@ -1,5 +1,5 @@
 from pyrogram.types import Message
-from pyrogram import filters
+from pyrogram import Client, filters
 from config import ADMINS, USER_REPLY_TEXT
 
 @Client.on_message(filters.private & filters.incoming)
