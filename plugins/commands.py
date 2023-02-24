@@ -19,8 +19,9 @@ async def start_command(client: Client, message: Message):
         await db.add_user(id)   
     text = message.text
     if len(text)>7: 
-        return await ForceSub(client, message)   
-               
+        chack_sub = await ForceSub(client, message)   
+        if not chack_sub:
+            return    
         try:
             base64_string = text.split(" ", 1)[1]
         except:
