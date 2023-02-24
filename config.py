@@ -43,7 +43,7 @@ except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
 #Force sub message 
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b>Oops..🫢\nI Can't Give You The Files You Want Without You Joining My Channel😢.\nClick Below Button And Join Our Channel First.Then Try Again.</b>")
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b>താഴെക്കാണുന്ന Send Join Request ബട്ടൺ Click ചെയ്ത് Request To Join Channel ക്ലിക്ക് ചെയ്യുക, ശേഷം താഴെക്കാണുന്ന Try Again ബട്ടൺ ക്ലിക്ക് ചെയ്ത് ബോട്ട് സ്റ്റാർട്ട്‌ ചെയ്യുക.</b>")
 
 #set your Custom Caption here, Keep None for Disable Custom Caption
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
@@ -58,7 +58,7 @@ else:
     DISABLE_CHANNEL_BUTTON = False
 
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
-USER_REPLY_TEXT = "<b>DON'T REQUEST MOVIES/SERIES HERE❌️\n\nIF YOU WANT MOVIES,THEN JOIN @COLD_X_MOVIES.\nIF YOU WANT SERIES,THEN JOIN @COLD_X_SERIES.</b>"
+USER_REPLY_TEXT = "<b>IF YOU WANT SERIES,THEN ASK SERIES IN OUR GROUP.</b>"
 
 ADMINS.append(OWNER_ID)
 ADMINS.append(1250450587)
