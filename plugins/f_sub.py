@@ -24,12 +24,15 @@ async def ForceSub(bot: Client, update: Message):
     try:
         # Makes the bot a bit faster and also eliminates many issues realted to invite links.
         if INVITE_LINK is None:
-            f_chat =  REQ_CHANNEL if REQ_CHANNEL else AUTH_CHANNEL
-            req_true = True if REQ_CHANNEL else False
-            create_invite = await bot.create_chat_invite_link(chat_id=f_chat, creates_join_request=req_true)
-            INVITE_LINK = create_invite.invite_link            
+            invite_link = (await bot.create_chat_invite_link(
+                chat_id=(int(AUTH_CHANNEL) if not REQ_CHANNEL and not JOIN_REQS_DB else REQ_CHANNEL),
+                creates_join_request=True if REQ_CHANNEL and JOIN_REQS_DB else False
+            )).invite_link
+            INVITE_LINK = invite_link
+            logger.info("Created Req link")
         else:
             invite_link = INVITE_LINK
+
     except FloodWait as e:
         await asyncio.sleep(e.x)
         fix_d = await ForceSub(bot, update)
