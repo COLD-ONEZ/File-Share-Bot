@@ -67,7 +67,7 @@ async def ForceSub(bot: Client, update: Message):
             return True
     except UserNotParticipant:        
         buttons = [[
-            InlineKeyboardButton("📢 Request to Join Channel 📢", url=invite_link)
+            InlineKeyboardButton("🌟 Send Join Request 🌟", url=invite_link)
             ],[
             InlineKeyboardButton(" 🔄 Try Again 🔄 ", url = f"https://t.me/{bot.username}?start={update.command[1]}")
         ]]         
