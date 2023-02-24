@@ -66,7 +66,7 @@ async def ForceSub(bot: Client, update: Message):
         buttons = [[
             InlineKeyboardButton("📢 Request to Join Channel 📢", url=invite_link)
             ],[
-            InlineKeyboardButton(" 🔄 Try Again 🔄 ", url = f"https://t.me/{bot.username}?start={message.command[1]}")
+            InlineKeyboardButton(" 🔄 Try Again 🔄 ", url = f"https://t.me/{bot.username}?start={update.command[1]}")
         ]]         
          
         await update.reply(
