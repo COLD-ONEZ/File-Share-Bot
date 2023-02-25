@@ -18,9 +18,13 @@ async def start_command(client: Client, message: Message):
     if not await db.is_user_exist(id):
         await db.add_user(id)   
     text = message.text
-    if len(text)>7: 
-        #await ForceSub(client, message)   
-        #return    
+    if len(text)>7:
+        try:
+            await ForceSub(client, message)   
+            return
+        except Exception as e:
+            print(e)
+            return
         try:
             base64_string = text.split(" ", 1)[1]
         except:
