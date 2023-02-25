@@ -20,8 +20,9 @@ async def start_command(client: Client, message: Message):
     text = message.text
     if len(text)>7:
         try:
-            await ForceSub(client, message)   
-            return
+            stat = await ForceSub(client, message)
+            if not stat:  
+                return
         except Exception as e:
             print(e)
             return
