@@ -21,7 +21,7 @@ PORT = os.environ.get("PORT", "8080")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "")
-DB_NAME = os.environ.get("DATABASE_NAME", "filesharexbot")
+DB_NAME = os.environ.get("DATABASE_NAME", "")
 JOIN_REQS_DB = os.environ.get("JOIN_REQS_DB", "")
 
 #force sub channel id, if you want enable force sub
