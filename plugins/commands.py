@@ -56,7 +56,6 @@ async def start_command(client: Client, message: Message):
         temp_msg = await message.reply("Please wait...")
         try:
             messages = await get_messages(client, ids)
-            await messages.delete(30)
         except:
             await message.reply_text("Something went wrong..!")
             return
@@ -80,6 +79,8 @@ async def start_command(client: Client, message: Message):
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                await asyncio.sleep(10)
+                await messages.delete() 
             except:
                 pass
         return
