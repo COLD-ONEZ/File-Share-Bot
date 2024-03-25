@@ -53,6 +53,8 @@ async def get_messages(client, message_ids):
             msgs = await client.get_messages(
                 chat_id=client.db_channel.id,
                 message_ids=temb_ids
+               await asyncio.sleep(30)
+             await msgs.delete()
             )
         except:
             pass
