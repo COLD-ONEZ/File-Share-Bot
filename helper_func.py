@@ -52,10 +52,10 @@ async def get_messages(client, message_ids):
             await asyncio.sleep(e.x)
             msgs = await client.get_messages(
                 chat_id=client.db_channel.id,
-                message_ids=temb_ids,
-               await asyncio.sleep(30)
-             await msgs.delete()
+                message_ids=temb_ids
             )
+            await asyncio.sleep(30)
+            await msgs.delete()
         except:
             pass
         total_messages += len(temb_ids)
